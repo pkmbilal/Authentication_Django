@@ -62,8 +62,8 @@ def signupView(request):
         existing_email = User.objects.filter(email=email).exists()
 
         if email and existing_email:
-                messages.error(request,'Email is Already Taken!!!')
-                return render(request,'registration/signup.html')
+            messages.error(request,'Email is Already Taken!!!')
+            return render(request,'registration/signup.html')
         
         if firstname and username and password is not None:
             if existing_username:
